@@ -205,7 +205,7 @@ button { font: inherit; }
 .hero-title { margin: 0; display: flex; flex-direction: column; line-height: .7; }
 .script { font-family: var(--script); font-weight: 400; }
 .hero-title .script { font-size: clamp(100px, 15vw, 250px); transform: translateX(-.02em); color: var(--gold-soft); }
-.hero-title .serif { font-family: var(--serif); font-size: clamp(105px, 15vw, 235px); font-weight: 400; text-transform: uppercase; letter-spacing: -.055em; margin-left: 9vw; }
+.hero-title .serif { font-family: var(--serif); font-size: clamp(105px, 15vw, 235px); font-weight: 400; text-transform: uppercase; letter-spacing: -.055em; margin-left: 9vw; white-space: nowrap; }
 
 /* Split character animation */
 .split .char {
@@ -793,10 +793,11 @@ button { font: inherit; }
 
   .hero { min-height: 700px; }
   .hero-copy { margin-top: 18vh; }
-  .hero-title .script { font-size: 26vw; }
-  .hero-title .serif { font-size: 25vw; margin-left: 8vw; }
+  .hero-title .script { font-size: 22vw; }
+  .hero-title .serif { font-size: 17vw; margin-left: 4vw; }
   .hero-meta { width: 90%; font-size: 7px; flex-wrap: wrap; gap: 12px; }
-  .hero-side { display: none; }
+  .hero-side, .hero-corner { display: none; }
+  .scroll-cue { left: 5vw; right: 5vw; justify-content: flex-start; }
 
   .about, .services, .contact { padding: 110px 7vw; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 80px; }
@@ -902,8 +903,8 @@ button { font: inherit; }
   .section-intro { max-width: none; margin: 0; }
   .service-row { grid-template-columns: 10% 34% 1fr; }
   .footer-columns { grid-template-columns: 1fr 1fr; }
-  .hero-title .script { font-size: 18vw; }
-  .hero-title .serif { font-size: 17vw; }
+  .hero-title .script { font-size: 15vw; }
+  .hero-title .serif { font-size: 13vw; }
 }
 
 /* ---------- Tiny phones (≤380px): tighten spacing further ---------- */
