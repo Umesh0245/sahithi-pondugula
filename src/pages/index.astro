@@ -1,0 +1,529 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+const images = {
+  hero: '/images/hero.webp',
+  about: '/images/about.webp',
+  bridal: '/images/bridal.webp',
+  photoshoot: '/images/photoshoot.webp',
+  glam: '/images/everyday-glam.png',
+  editorial: '/images/editorial.webp',
+  purple: '/images/purple.webp',
+  braided: '/images/braided.webp',
+  closeup: '/images/closeup.webp',
+  behind: '/images/behind.png',
+  artist: '/images/artist.png',
+  bridalGold: '/images/bridal-gold.png',
+  smaEditorial: '/images/sma-editorial.png'
+};
+
+const portfolio = [
+  { src: images.bridal, title: 'Bridal', category: 'Bridal', size: 'tall' },
+  { src: images.bridalGold, title: 'Golden Hour Bride', category: 'Bridal', size: 'feature' },
+  { src: images.smaEditorial, title: 'Pastel Editorial · SMA', category: 'Photoshoot', size: 'feature' },
+  { src: images.purple, title: 'After Dark', category: 'Photoshoot', size: 'wide' },
+  { src: images.closeup, title: 'Editorial Detail', category: 'Photoshoot', size: 'tall' },
+  { src: images.editorial, title: 'Everyday Definition', category: 'Everyday Glam', size: 'square' },
+  { src: images.glam, title: 'Soft Glam', category: 'Everyday Glam', size: 'portrait' },
+  { src: images.about, title: 'Statement Look', category: 'Photoshoot', size: 'portrait' },
+  { src: images.hero, title: 'Bridal Radiance', category: 'Bridal', size: 'feature' }
+];
+
+const testimonials = [
+  { quote: 'Sahithi made me feel like the truest version of myself on my wedding day. Every detail was intentional.', name: 'Ananya R.', role: 'Bride, 2026' },
+  { quote: 'The lighting on set loved her work — makeup that reads on camera without ever feeling heavy.', name: 'Karan M.', role: 'Fashion Photographer' },
+  { quote: 'She listens first, then paints. My skin looked like skin, only better.', name: 'Ritu S.', role: 'Editorial Client' },
+  { quote: 'Calm energy, ridiculous precision. I would not trust anyone else with my face on a big day.', name: 'Meera V.', role: 'Bride, 2025' }
+];
+
+const marquee = ['BRIDAL', 'EDITORIAL', 'GLAM', 'PHOTOSHOOT', 'PERSONAL', 'ELEGANT', 'REFINED', 'SIGNATURE'];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#390306" />
+    <meta name="description" content="Sahithi Pondugula — Makeup Artist specializing in bridal, photoshoot and everyday glam makeup." />
+    <meta property="og:title" content="Sahithi Pondugula — Makeup Artist" />
+    <meta property="og:description" content="Refined, personalized makeup looks designed to enhance your natural features." />
+    <meta property="og:image" content={images.hero} />
+    <title>Sahithi Pondugula — Makeup Artist</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23390306'/%3E%3Ctext x='50' y='68' font-size='62' text-anchor='middle' fill='%23f7eee0' font-family='serif'%3ES%3C/text%3E%3C/svg%3E" />
+    <link rel="preload" as="image" href={images.hero} fetchpriority="high" />
+    <ClientRouter />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><i></i></div>
+    <div class="cursor cursor-dot" aria-hidden="true"></div>
+    <div class="cursor cursor-ring" aria-hidden="true"><span>VIEW</span></div>
+
+    <div class="loader" aria-hidden="true">
+      <div class="loader-inner">
+        <div class="loader-eyebrow">PORTFOLIO · 2026</div>
+        <div class="loader-mark"><span>S</span></div>
+        <div class="loader-name">
+          <em>Sahithi</em>
+          <b>PONDUGULA</b>
+        </div>
+        <div class="loader-line"><span></span></div>
+        <div class="loader-tag">MAKEUP ARTIST · BRIDAL · EDITORIAL · GLAM</div>
+        <div class="loader-status"><i></i> OPEN FOR HIRE · AVAILABLE FOR FREELANCE</div>
+      </div>
+      <div class="loader-swipe"></div>
+    </div>
+
+    <header class="site-header" data-header>
+      <div class="header-scrim" aria-hidden="true"></div>
+      <a class="wordmark magnetic" href="#home" aria-label="Sahithi Pondugula home">
+        <span class="wordmark-mark">S</span>
+        <span class="wordmark-full">SAHITHI <i>PONDUGULA</i></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a class="nav-link magnetic" href="#about" data-nav="about"><em>01</em><span>About</span></a>
+        <a class="nav-link magnetic" href="#services" data-nav="services"><em>02</em><span>Services</span></a>
+        <a class="nav-link magnetic" href="#portfolio" data-nav="portfolio"><em>03</em><span>Portfolio</span></a>
+        <a class="nav-link magnetic" href="#contact" data-nav="contact"><em>04</em><span>Contact</span></a>
+      </nav>
+      <a class="instagram magnetic" href="https://www.instagram.com/_makeup_by_sahithi_/" target="_blank" rel="noreferrer">
+        <span class="ig-dot"></span>@_makeup_by_sahithi_
+      </a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </header>
+
+    <div class="mobile-menu" aria-hidden="true">
+      <nav aria-label="Mobile navigation">
+        <a href="#about"><em>01</em>About</a>
+        <a href="#services"><em>02</em>Services</a>
+        <a href="#portfolio"><em>03</em>Portfolio</a>
+        <a href="#contact"><em>04</em>Contact</a>
+      </nav>
+      <div class="mobile-menu-foot">
+        <p>@_makeup_by_sahithi_</p>
+        <p>Makeupbysahithi@gmail.com</p>
+      </div>
+    </div>
+
+    <a class="book-pill magnetic" href="#contact" aria-label="Book a look">
+      <span class="book-pill-inner">
+        <span>BOOK A LOOK</span>
+        <span>BOOK A LOOK</span>
+      </span>
+      <i></i>
+    </a>
+
+    <main>
+      <section id="home" class="hero section-dark">
+        <div class="hero-image-wrap" data-parallax="0.08">
+          <img src={images.hero} alt="Sahithi Pondugula makeup look with traditional jewelry" class="hero-image" fetchpriority="high" />
+          <div class="hero-image-shade"></div>
+          <div class="hero-image-vignette"></div>
+        </div>
+        <div class="hero-aura"></div>
+        <div class="hero-copy">
+          <div class="hero-badges reveal">
+            <span class="eyebrow">MAKEUP ARTIST · INDIA</span>
+            <a href="#contact" class="hire-pill">
+              <i></i>
+              <span><b>OPEN FOR HIRE</b> · Available for freelance projects</span>
+            </a>
+          </div>
+          <h1 class="hero-title" aria-label="The Art of Beauty">
+            <span class="script split" data-text="The Art of"></span>
+            <span class="serif split" data-text="Beauty"></span>
+          </h1>
+          <p class="hero-subtitle reveal">Makeup by <em>Sahithi Pondugula</em> — bridal, editorial &amp; everyday glam. Now taking on new clients &amp; freelance work.</p>
+          <div class="hero-meta reveal">
+            <span><em>01</em> — INTRODUCTION</span>
+            <span class="pulse"><i></i> AVAILABLE FOR BOOKINGS · 2026</span>
+            <span>REFINED · PERSONAL · ELEGANT</span>
+          </div>
+        </div>
+        <a href="#about" class="scroll-cue magnetic"><span>SCROLL TO EXPLORE</span><i></i></a>
+        <div class="hero-corner">
+          <span>SAHITHI PONDUGULA</span>
+          <span class="hero-corner-line"></span>
+          <span>EST. 2024</span>
+        </div>
+        <div class="hero-side">
+          <span>MAKEUP ARTIST · BRIDAL · EDITORIAL · GLAM · MAKEUP ARTIST</span>
+        </div>
+      </section>
+
+      <div class="marquee marquee-cream" aria-hidden="true">
+        <div class="marquee-track">
+          {[...marquee, ...marquee, ...marquee].map(word => (
+            <span><b>{word}</b><i>✦</i></span>
+          ))}
+        </div>
+      </div>
+
+      <section id="about" class="about section-cream">
+        <div class="section-number reveal">02 <span>/ ABOUT</span></div>
+        <div class="about-grid">
+          <div class="about-media tilt reveal" data-parallax="0.04">
+            <img src={images.artist} alt="Sahithi Pondugula, makeup artist portrait" loading="lazy" />
+            <span class="image-caption">SAHITHI · THE ARTIST</span>
+            <span class="image-badge">✦ SIGNATURE</span>
+          </div>
+          <div class="about-copy">
+            <p class="eyebrow reveal">ABOUT THE ARTIST</p>
+            <h2 class="display reveal">Enhancing the beauty<br /><em>that is already yours.</em></h2>
+            <p class="body-copy reveal">I'm Sahithi, a dedicated and passionate Makeup Artist with one year of professional experience in creating refined and personalized makeup looks.</p>
+            <p class="body-copy muted reveal">My work spans basic, bridal, and fashion makeup, with a focus on enhancing natural features while complementing each client's individual style and personality. Precision, quality and a memorable experience are at the heart of every look.</p>
+            <div class="about-credential reveal">
+              <div class="sma-mark" aria-hidden="true">
+                <span class="sma-letters">sma</span>
+                <span class="sma-tag"><i>international</i> <em>makeup</em> <i>academy</i></span>
+              </div>
+              <div class="credential-body">
+                <small>CERTIFIED · 2024</small>
+                <strong>Trained at <em>SMA International Makeup Academy</em></strong>
+              </div>
+            </div>
+            <div class="about-stats reveal">
+              <div><strong>120+</strong><span>Looks Created</span></div>
+              <div><strong>40+</strong><span>Brides</span></div>
+              <div><strong>15+</strong><span>Editorials</span></div>
+            </div>
+            <div class="about-signature reveal">Sahithi <span>Pondugula</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services section-dark">
+        <div class="section-heading">
+          <div class="section-number reveal">03 <span>/ SERVICES</span></div>
+          <h2 class="script giant reveal">Services</h2>
+          <p class="section-intro reveal">Three ways to shape the mood, define the details and let the look feel completely yours.</p>
+        </div>
+        <div class="service-list">
+          <article class="service-row image-hover" data-category="Bridal">
+            <div class="service-index">01</div>
+            <div class="service-image"><img src={images.bridal} alt="Bridal makeup look" loading="lazy" /><span class="service-image-tag">BRIDAL</span></div>
+            <div class="service-content"><h3>Bridal</h3><p>Timeless elegance for your most meaningful moments — engagements, sangeet, reception and the day itself.</p><span class="service-cta">VIEW LOOK <b>↗</b></span></div>
+          </article>
+          <article class="service-row image-hover" data-category="Photoshoot">
+            <div class="service-index">02</div>
+            <div class="service-image"><img src={images.braided} alt="Creative photoshoot makeup look" loading="lazy" /><span class="service-image-tag">EDITORIAL</span></div>
+            <div class="service-content"><h3>Photoshoot</h3><p>Expressive makeup designed for light, camera and character — from soft editorial to high-fashion.</p><span class="service-cta">VIEW LOOK <b>↗</b></span></div>
+          </article>
+          <article class="service-row image-hover" data-category="Everyday Glam">
+            <div class="service-index">03</div>
+            <div class="service-image"><img src={images.glam} alt="Everyday glam makeup look" loading="lazy" /><span class="service-image-tag">GLAM</span></div>
+            <div class="service-content"><h3>Everyday Glam</h3><p>Refined beauty for the moments that deserve a little more — parties, dinners, portrait sessions.</p><span class="service-cta">VIEW LOOK <b>↗</b></span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="portfolio" class="portfolio section-cream">
+        <div class="portfolio-head">
+          <div>
+            <div class="section-number reveal">04 <span>/ PORTFOLIO</span></div>
+            <h2 class="display reveal">Gallery <em>&amp;</em><br />Portfolio</h2>
+          </div>
+          <p class="portfolio-note reveal">A selection of bridal, photoshoot and everyday glam work — composed around individuality, detail and light.</p>
+        </div>
+        <div class="filters reveal" role="tablist" aria-label="Portfolio categories">
+          <span class="filter-indicator" aria-hidden="true"></span>
+          <button class="filter active" data-filter="All" role="tab" aria-selected="true">All <em>09</em></button>
+          <button class="filter" data-filter="Bridal" role="tab" aria-selected="false">Bridal <em>03</em></button>
+          <button class="filter" data-filter="Photoshoot" role="tab" aria-selected="false">Photoshoot <em>04</em></button>
+          <button class="filter" data-filter="Everyday Glam" role="tab" aria-selected="false">Everyday Glam <em>02</em></button>
+        </div>
+        <div class="gallery" id="gallery">
+          {portfolio.map((item, index) => (
+            <button class={`gallery-item ${item.size} image-hover reveal`} style={`--stagger:${index * 60}ms`} data-category={item.category} data-index={index} data-src={item.src} data-title={item.title} data-cat={item.category} aria-label={`Open ${item.title} portfolio image`}>
+              <img src={item.src} alt={item.title} loading={index < 2 ? 'eager' : 'lazy'} />
+              <span class="gallery-overlay">
+                <small>{item.category}</small>
+                <strong>{item.title}</strong>
+                <i>VIEW <b>↗</b></i>
+              </span>
+              <span class="gallery-index">{String(index + 1).padStart(2, '0')}</span>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <div class="marquee marquee-dark" aria-hidden="true">
+        <div class="marquee-track">
+          {[...marquee, ...marquee, ...marquee].map(word => (
+            <span><b>{word}</b><i>✦</i></span>
+          ))}
+        </div>
+      </div>
+
+      <section class="testimonials section-cream">
+        <div class="section-number reveal">05 <span>/ WORDS</span></div>
+        <h2 class="display reveal testimonials-title">Kind words from<br /><em>the chair.</em></h2>
+        <div class="testimonial-track reveal">
+          {testimonials.map(t => (
+            <figure class="testimonial-card">
+              <div class="testimonial-quote">“</div>
+              <blockquote>{t.quote}</blockquote>
+              <figcaption><strong>{t.name}</strong><span>{t.role}</span></figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section class="statement section-dark">
+        <div class="statement-orbit"></div>
+        <div class="statement-orbit statement-orbit-2"></div>
+        <div class="section-number reveal">06 <span>/ THE PHILOSOPHY</span></div>
+        <blockquote class="reveal">"Beauty is not about changing who you are.<br /><em>It is about bringing you into focus.</em>"</blockquote>
+        <div class="statement-line"></div>
+        <svg class="statement-ring" viewBox="0 0 400 400" aria-hidden="true">
+          <defs>
+            <path id="ringPath" d="M 200,200 m -160,0 a 160,160 0 1,1 320,0 a 160,160 0 1,1 -320,0" />
+          </defs>
+          <text><textPath href="#ringPath">SAHITHI PONDUGULA · MAKEUP ARTIST · BRIDAL · EDITORIAL · GLAM · SAHITHI PONDUGULA · </textPath></text>
+        </svg>
+      </section>
+
+      <section id="contact" class="contact section-cream">
+        <div class="contact-grid">
+          <div class="contact-image reveal" data-parallax="0.05">
+            <img src={images.behind} alt="Sahithi working on a makeup look" loading="lazy" />
+            <span>BEHIND THE LOOK</span>
+          </div>
+          <div class="contact-copy">
+            <div class="section-number reveal">07 <span>/ CONTACT</span></div>
+            <h2 class="display reveal">Let's create<br /><em>your look.</em></h2>
+            <p class="body-copy reveal">For bookings and makeup enquiries, reach out directly. Tell me about the occasion and the look you're imagining.</p>
+            <div class="contact-cards reveal">
+              <a class="contact-card magnetic" href="tel:9502548386">
+                <span class="cc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 5c0-.5.4-1 1-1h3l2 5-2 1c1 2 3 4 5 5l1-2 5 2v3c0 .6-.5 1-1 1-9 0-14-5-14-14z"/></svg>
+                </span>
+                <span class="cc-body"><small>PHONE · CALL DIRECT</small><span>9502548386</span></span>
+                <span class="cc-arrow">↗</span>
+              </a>
+              <a class="contact-card magnetic accent" href="https://wa.me/919502548386" target="_blank" rel="noreferrer">
+                <span class="cc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 12a8 8 0 1 1-3.5-6.6L20 4l-1.4 3.5A8 8 0 0 1 20 12zM8.5 8.5c-.3 0-.7 0-1 .3-.3.3-1.1 1-1.1 2.5s1.1 3 1.3 3.2c.2.3 2.2 3.4 5.4 4.6 2.7 1 3.2.8 3.8.7.6-.1 2-.8 2.2-1.6.3-.8.3-1.5.2-1.6-.1-.1-.4-.2-.8-.4-.4-.2-2-1-2.3-1.1-.3-.1-.5-.1-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.4-.2-1.5-.6-2.9-1.8-1.1-1-1.8-2.2-2-2.5-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.8-1-2.4-.2-.5-.5-.5-.7-.5z"/></svg>
+                </span>
+                <span class="cc-body"><small>WHATSAPP · FASTEST</small><span>Quick booking chat</span></span>
+                <span class="cc-arrow">↗</span>
+              </a>
+              <a class="contact-card magnetic" href="mailto:Makeupbysahithi@gmail.com">
+                <span class="cc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6l8.5 7 8.5-7"/></svg>
+                </span>
+                <span class="cc-body"><small>EMAIL · ENQUIRE</small><span>Makeupbysahithi@gmail.com</span></span>
+                <span class="cc-arrow">↗</span>
+              </a>
+              <a class="contact-card magnetic" href="https://www.instagram.com/_makeup_by_sahithi_/" target="_blank" rel="noreferrer">
+                <span class="cc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                </span>
+                <span class="cc-body"><small>INSTAGRAM · SEE MORE</small><span>@_makeup_by_sahithi_</span></span>
+                <span class="cc-arrow">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer section-dark">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-label">Sahithi Pondugula</span>
+          <strong>MAKEUP ARTIST · BRIDAL · EDITORIAL · GLAM</strong>
+          <span class="footer-status"><i></i> OPEN FOR HIRE · AVAILABLE FOR FREELANCE</span>
+        </div>
+        <a href="#home" class="back-top magnetic"><span>BACK TO TOP</span><i>↑</i></a>
+      </div>
+      <div class="footer-columns">
+        <div class="fc-col">
+          <small>REACH OUT</small>
+          <a href="tel:9502548386">9502548386</a>
+          <a href="mailto:Makeupbysahithi@gmail.com">Makeupbysahithi@gmail.com</a>
+          <a href="https://www.instagram.com/_makeup_by_sahithi_/" target="_blank" rel="noreferrer">@_makeup_by_sahithi_</a>
+        </div>
+        <div class="fc-col">
+          <small>EXPLORE</small>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="fc-col">
+          <small>CREDENTIAL</small>
+          <span>Trained at <em>SMA International Makeup Academy</em></span>
+          <span>Certified · 2024</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Sahithi Pondugula · All rights reserved</span>
+        <span>Refined · Personal · Elegant</span>
+        <span>Crafted with care in India</span>
+      </div>
+    </footer>
+
+    <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Portfolio image viewer">
+      <button class="lightbox-close magnetic" aria-label="Close image viewer">CLOSE ×</button>
+      <button class="lightbox-prev magnetic" aria-label="Previous image">←</button>
+      <figure><img src="" alt="" /><figcaption><span></span><b></b></figcaption></figure>
+      <button class="lightbox-next magnetic" aria-label="Next image">→</button>
+      <div class="lightbox-counter">01 / 08</div>
+    </div>
+
+    <script>
+      const initSite = () => {
+        const root = document.documentElement;
+        const loader = document.querySelector('.loader');
+        if (loader && !sessionStorage.getItem('sahithi-loaded')) {
+          window.setTimeout(() => loader.classList.add('is-hidden'), 2400);
+          sessionStorage.setItem('sahithi-loaded', '1');
+        } else loader?.classList.add('is-hidden');
+
+        // Split hero title into characters for staggered kinetic reveal
+        document.querySelectorAll('.split').forEach(el => {
+          const text = el.dataset.text || el.textContent || '';
+          el.textContent = '';
+          [...text].forEach((ch, i) => {
+            const span = document.createElement('span');
+            span.className = 'char';
+            span.style.setProperty('--i', String(i));
+            span.textContent = ch === ' ' ? ' ' : ch;
+            el.appendChild(span);
+          });
+          requestAnimationFrame(() => el.classList.add('is-shown'));
+        });
+
+        const observer = new IntersectionObserver((entries) => entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        }), { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+        const revealEls = document.querySelectorAll('.reveal, .image-reveal, .reveal-line');
+        revealEls.forEach(el => observer.observe(el));
+        // Safety net: reveal anything already in view after 400ms in case observer misses
+        setTimeout(() => revealEls.forEach(el => {
+          const r = el.getBoundingClientRect();
+          if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-visible');
+        }), 400);
+
+        // Section scroll spy for nav
+        const navLinks = document.querySelectorAll('.nav-link[data-nav]');
+        const sections = [...document.querySelectorAll('section[id]')];
+        const spy = new IntersectionObserver(entries => entries.forEach(e => {
+          if (e.isIntersecting) {
+            const id = e.target.id;
+            navLinks.forEach(l => l.classList.toggle('is-current', l.dataset.nav === id));
+          }
+        }), { rootMargin: '-45% 0px -45% 0px' });
+        sections.forEach(s => spy.observe(s));
+
+        const parallax = [...document.querySelectorAll('[data-parallax]')];
+        const header = document.querySelector('[data-header]');
+        const bookPill = document.querySelector('.book-pill');
+        const progress = document.querySelector('.scroll-progress i');
+        const onScroll = () => {
+          const y = window.scrollY;
+          header?.classList.toggle('is-scrolled', y > 60);
+          bookPill?.classList.toggle('is-visible', y > innerHeight * 0.5);
+          const p = Math.min(1, y / Math.max(1, document.body.scrollHeight - innerHeight));
+          if (progress) progress.style.transform = `scaleX(${p})`;
+          if (root.classList.contains('reduce-motion')) return;
+          parallax.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.bottom > 0 && rect.top < innerHeight) {
+              const speed = Number(el.dataset.parallax || 0.04);
+              el.style.setProperty('--parallax-y', `${(innerHeight / 2 - (rect.top + rect.height / 2)) * speed}px`);
+            }
+          });
+        };
+        window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+        const dot = document.querySelector('.cursor-dot');
+        const ring = document.querySelector('.cursor-ring');
+        if (matchMedia('(pointer:fine)').matches && dot && ring) {
+          let mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my;
+          addEventListener('pointermove', e => { mx=e.clientX; my=e.clientY; dot.style.transform=`translate3d(${mx}px,${my}px,0)`; });
+          const tick = () => { rx += (mx-rx)*.14; ry += (my-ry)*.14; ring.style.transform=`translate3d(${rx}px,${ry}px,0) translate(-50%,-50%)`; requestAnimationFrame(tick); }; tick();
+          document.querySelectorAll('a,button,.image-hover').forEach(el => {
+            el.addEventListener('mouseenter', () => ring.classList.add('is-hovering'));
+            el.addEventListener('mouseleave', () => ring.classList.remove('is-hovering'));
+          });
+        }
+
+        // Image parallax within cards + tilt on .tilt elements
+        document.querySelectorAll('.image-hover').forEach(el => {
+          el.addEventListener('pointermove', e => {
+            const r = el.getBoundingClientRect();
+            el.style.setProperty('--mx', `${((e.clientX-r.left)/r.width-.5)*12}px`);
+            el.style.setProperty('--my', `${((e.clientY-r.top)/r.height-.5)*12}px`);
+          });
+          el.addEventListener('pointerleave', () => { el.style.setProperty('--mx','0px'); el.style.setProperty('--my','0px'); });
+        });
+
+        document.querySelectorAll('.tilt').forEach(el => {
+          el.addEventListener('pointermove', e => {
+            const r = el.getBoundingClientRect();
+            const rx = ((e.clientY - r.top) / r.height - .5) * -8;
+            const ry = ((e.clientX - r.left) / r.width - .5) * 8;
+            el.style.setProperty('--tilt-x', `${rx}deg`);
+            el.style.setProperty('--tilt-y', `${ry}deg`);
+          });
+          el.addEventListener('pointerleave', () => { el.style.setProperty('--tilt-x','0deg'); el.style.setProperty('--tilt-y','0deg'); });
+        });
+
+        // Services: floating preview follows cursor
+        document.querySelectorAll('.service-row').forEach(row => {
+          const preview = row.querySelector('.service-preview');
+          if (!preview) return;
+          row.addEventListener('pointerenter', () => preview.classList.add('is-shown'));
+          row.addEventListener('pointerleave', () => preview.classList.remove('is-shown'));
+          row.addEventListener('pointermove', e => {
+            const r = row.getBoundingClientRect();
+            preview.style.transform = `translate(${e.clientX - r.left}px, ${e.clientY - r.top}px)`;
+          });
+        });
+
+        const menuBtn = document.querySelector('.menu-toggle'), menu = document.querySelector('.mobile-menu');
+        menuBtn?.addEventListener('click', () => { const open = !menu.classList.contains('is-open'); menu.classList.toggle('is-open', open); menuBtn.setAttribute('aria-expanded', String(open)); menu?.setAttribute('aria-hidden', String(!open)); document.body.classList.toggle('menu-open', open); });
+        menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('is-open'); menuBtn?.setAttribute('aria-expanded','false'); document.body.classList.remove('menu-open'); }));
+
+        const filters = document.querySelectorAll('.filter');
+        const items = document.querySelectorAll('.gallery-item');
+        filters.forEach(btn => btn.addEventListener('click', () => {
+          filters.forEach(x => { x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+          btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+          const filter = btn.dataset.filter;
+          items.forEach(item => {
+            const show = filter === 'All' || item.dataset.category === filter;
+            item.classList.toggle('is-filtered-out', !show);
+          });
+        }));
+
+        const lightbox = document.querySelector('.lightbox');
+        const lbImg = lightbox?.querySelector('img'), lbCat = lightbox?.querySelector('figcaption span'), lbTitle = lightbox?.querySelector('figcaption b'), counter = lightbox?.querySelector('.lightbox-counter');
+        let current = 0;
+        const visibleItems = () => [...document.querySelectorAll('.gallery-item:not(.is-filtered-out)')];
+        const open = (index) => {
+          const list = visibleItems(); current = Math.max(0, Math.min(index, list.length-1)); const item=list[current];
+          lbImg.src=item.dataset.src; lbImg.alt=item.dataset.title; lbCat.textContent=item.dataset.cat; lbTitle.textContent=item.dataset.title; counter.textContent=`${String(current+1).padStart(2,'0')} / ${String(list.length).padStart(2,'0')}`;
+          lightbox.classList.add('is-open'); lightbox.setAttribute('aria-hidden','false'); document.body.classList.add('lightbox-open');
+        };
+        const close = () => { lightbox.classList.remove('is-open'); lightbox.setAttribute('aria-hidden','true'); document.body.classList.remove('lightbox-open'); };
+        const step = delta => { const list=visibleItems(); current=(current+delta+list.length)%list.length; open(current); };
+        items.forEach(item => item.addEventListener('click', () => open(visibleItems().indexOf(item))));
+        lightbox?.querySelector('.lightbox-close')?.addEventListener('click', close); lightbox?.querySelector('.lightbox-prev')?.addEventListener('click',()=>step(-1)); lightbox?.querySelector('.lightbox-next')?.addEventListener('click',()=>step(1));
+        lightbox?.addEventListener('click', e => { if(e.target===lightbox) close(); });
+        addEventListener('keydown', e => { if(!lightbox?.classList.contains('is-open')) return; if(e.key==='Escape') close(); if(e.key==='ArrowLeft') step(-1); if(e.key==='ArrowRight') step(1); });
+
+        if (matchMedia('(pointer:fine)').matches) {
+          document.querySelectorAll('.magnetic').forEach(el => el.addEventListener('pointermove', e => { const r=el.getBoundingClientRect(); el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.12}px,${(e.clientY-r.top-r.height/2)*.12}px)`; }));
+          document.querySelectorAll('.magnetic').forEach(el => el.addEventListener('pointerleave', () => el.style.transform=''));
+        }
+
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) root.classList.add('reduce-motion');
+      };
+      initSite();
+    </script>
+  </body>
+</html>
