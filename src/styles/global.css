@@ -879,6 +879,62 @@ button { font: inherit; }
   .footer { padding: 65px 7vw 25px; }
 }
 
+/* ---------- Laptop (1024–1200px): tighter paddings, denser type ---------- */
+@media (max-width: 1200px) {
+  .site-header { padding: 0 3.5vw; }
+  .desktop-nav { gap: 22px; }
+  .about, .services, .contact { padding: 120px 5vw 130px; }
+  .about-grid, .contact-grid { gap: 6vw; }
+  .portfolio { padding: 120px 4vw 140px; }
+  .gallery { columns: 3; column-gap: 14px; }
+  .gallery-item { margin-bottom: 14px; }
+  .section-heading { gap: 24px; }
+  .footer-columns { gap: 36px; }
+}
+
+/* ---------- Tablet portrait (601–900px): 2-col gallery, mid-density ---------- */
+@media (max-width: 900px) and (min-width: 601px) {
+  .gallery { columns: 2; }
+  .about-grid { grid-template-columns: minmax(280px, 45%) 1fr; gap: 6vw; }
+  .contact-grid { grid-template-columns: 40% 1fr; gap: 6vw; }
+  .contact-image img { aspect-ratio: 4/5; }
+  .section-heading { grid-template-columns: 1fr 1fr; }
+  .section-intro { max-width: none; margin: 0; }
+  .service-row { grid-template-columns: 10% 34% 1fr; }
+  .footer-columns { grid-template-columns: 1fr 1fr; }
+  .hero-title .script { font-size: 18vw; }
+  .hero-title .serif { font-size: 17vw; }
+}
+
+/* ---------- Tiny phones (≤380px): tighten spacing further ---------- */
+@media (max-width: 380px) {
+  .site-header { padding: 0 5vw; height: 62px; }
+  .hero-copy { margin-bottom: 10vh; }
+  .hero-badges { gap: 10px; }
+  .hire-pill { font-size: 9px; padding: 6px 12px 6px 10px; }
+  .hero-subtitle { font-size: 14px; margin-top: 22px; }
+  .about, .services, .contact { padding: 80px 6vw; }
+  .about-credential { padding: 14px 16px; gap: 14px; }
+  .sma-letters { font-size: 26px; }
+  .about-stats { gap: 18px; }
+  .about-stats strong { font-size: 26px; }
+  .contact-card { padding: 14px 16px; grid-template-columns: 34px 1fr 16px; gap: 10px; }
+  .cc-icon { width: 34px; height: 34px; }
+  .cc-icon svg { width: 16px; height: 16px; }
+  .cc-body > span { font-size: 14px; }
+  .footer-label { font-size: 44px; }
+  .book-pill { padding: 12px 14px 12px 18px; font-size: 8px; }
+}
+
+/* ---------- Landscape short screens ---------- */
+@media (max-height: 560px) and (orientation: landscape) {
+  .hero { min-height: 100vh; }
+  .hero-copy { margin-top: 0; }
+  .hero-title .script { font-size: clamp(60px, 12vw, 120px); }
+  .hero-title .serif { font-size: clamp(60px, 12vw, 115px); }
+  .loader-mark { font-size: clamp(80px, 14vw, 120px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal, .reveal-line, .image-reveal { transition: none; opacity: 1; transform: none; filter: none; clip-path: none; }
