@@ -6,28 +6,27 @@ const images = {
   hero: '/images/hero.webp',
   about: '/images/about.webp',
   bridal: '/images/bridal.webp',
-  photoshoot: '/images/photoshoot.webp',
   glam: '/images/everyday-glam.png',
   editorial: '/images/editorial.webp',
   purple: '/images/purple.webp',
   braided: '/images/braided.webp',
   closeup: '/images/closeup.webp',
-  behind: '/images/behind.png',
+  behind: '/images/sma-blur-v2.jpg',
   artist: '/images/artist.png',
-  bridalGold: '/images/bridal-gold.png',
+  bridalGold: '/images/sma-certificate-v2.jpg',
   smaEditorial: '/images/sma-editorial.png',
   glamWarm: '/images/glam-warm.png'
 };
 
 const portfolio = [
   { src: images.bridal, title: 'Bridal', category: 'Bridal', size: 'tall' },
-  { src: images.bridalGold, title: 'Golden Hour Bride', category: 'Bridal', size: 'feature' },
-  { src: images.smaEditorial, title: 'Pastel Editorial · SMA', category: 'Photoshoot', size: 'feature' },
-  { src: images.purple, title: 'After Dark', category: 'Photoshoot', size: 'wide' },
-  { src: images.closeup, title: 'Editorial Detail', category: 'Photoshoot', size: 'tall' },
+  { src: images.bridalGold, title: 'SMA · Fashion Artist Certified', category: 'Bridal', size: 'feature' },
+  { src: images.smaEditorial, title: 'Pastel Editorial · SMA', category: 'Fashion', size: 'feature' },
+  { src: images.purple, title: 'After Dark', category: 'Fashion', size: 'wide' },
+  { src: images.closeup, title: 'Editorial Detail', category: 'Fashion', size: 'tall' },
   { src: images.glamWarm, title: 'Everyday Definition', category: 'Everyday Glam', size: 'square' },
   { src: images.glam, title: 'Soft Glam', category: 'Everyday Glam', size: 'portrait' },
-  { src: images.about, title: 'Statement Look', category: 'Photoshoot', size: 'portrait' },
+  { src: images.about, title: 'Statement Look', category: 'Fashion', size: 'portrait' },
   { src: images.hero, title: 'Bridal Radiance', category: 'Bridal', size: 'feature' }
 ];
 
@@ -38,7 +37,7 @@ const testimonials = [
   { quote: 'Calm energy, ridiculous precision. I would not trust anyone else with my face on a big day.', name: 'Meera V.', role: 'Bride, 2025' }
 ];
 
-const marquee = ['BRIDAL', 'EDITORIAL', 'GLAM', 'PHOTOSHOOT', 'PERSONAL', 'ELEGANT', 'REFINED', 'SIGNATURE'];
+const marquee = ['BRIDAL', 'EDITORIAL', 'GLAM', 'FASHION', 'PERSONAL', 'ELEGANT', 'REFINED', 'SIGNATURE'];
 ---
 
 <html lang="en">
@@ -46,7 +45,7 @@ const marquee = ['BRIDAL', 'EDITORIAL', 'GLAM', 'PHOTOSHOOT', 'PERSONAL', 'ELEGA
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#390306" />
-    <meta name="description" content="Sahithi Pondugula — Makeup Artist specializing in bridal, photoshoot and everyday glam makeup." />
+    <meta name="description" content="Sahithi Pondugula — Makeup Artist specializing in bridal, fashion and everyday glam makeup." />
     <meta property="og:title" content="Sahithi Pondugula — Makeup Artist" />
     <meta property="og:description" content="Refined, personalized makeup looks designed to enhance your natural features." />
     <meta property="og:image" content={images.hero} />
@@ -206,10 +205,10 @@ const marquee = ['BRIDAL', 'EDITORIAL', 'GLAM', 'PHOTOSHOOT', 'PERSONAL', 'ELEGA
             <div class="service-image"><img src={images.bridal} alt="Bridal makeup look" loading="lazy" /><span class="service-image-tag">BRIDAL</span></div>
             <div class="service-content"><h3>Bridal</h3><p>Timeless elegance for your most meaningful moments — engagements, sangeet, reception and the day itself.</p><span class="service-cta">VIEW LOOK <b>↗</b></span></div>
           </article>
-          <article class="service-row image-hover" data-category="Photoshoot">
+          <article class="service-row image-hover" data-category="Fashion">
             <div class="service-index">02</div>
-            <div class="service-image"><img src={images.braided} alt="Creative photoshoot makeup look" loading="lazy" /><span class="service-image-tag">EDITORIAL</span></div>
-            <div class="service-content"><h3>Photoshoot</h3><p>Expressive makeup designed for light, camera and character — from soft editorial to high-fashion.</p><span class="service-cta">VIEW LOOK <b>↗</b></span></div>
+            <div class="service-image"><img src={images.braided} alt="Creative fashion makeup look" loading="lazy" /><span class="service-image-tag">EDITORIAL</span></div>
+            <div class="service-content"><h3>Fashion</h3><p>Expressive makeup designed for light, camera and character — from soft editorial to high-fashion.</p><span class="service-cta">VIEW LOOK <b>↗</b></span></div>
           </article>
           <article class="service-row image-hover" data-category="Everyday Glam">
             <div class="service-index">03</div>
@@ -225,13 +224,13 @@ const marquee = ['BRIDAL', 'EDITORIAL', 'GLAM', 'PHOTOSHOOT', 'PERSONAL', 'ELEGA
             <div class="section-number reveal">04 <span>/ PORTFOLIO</span></div>
             <h2 class="display reveal">Gallery <em>&amp;</em><br />Portfolio</h2>
           </div>
-          <p class="portfolio-note reveal">A selection of bridal, photoshoot and everyday glam work — composed around individuality, detail and light.</p>
+          <p class="portfolio-note reveal">A selection of bridal, fashion and everyday glam work — composed around individuality, detail and light.</p>
         </div>
         <div class="filters reveal" role="tablist" aria-label="Portfolio categories">
           <span class="filter-indicator" aria-hidden="true"></span>
           <button class="filter active" data-filter="All" role="tab" aria-selected="true">All <em>09</em></button>
           <button class="filter" data-filter="Bridal" role="tab" aria-selected="false">Bridal <em>03</em></button>
-          <button class="filter" data-filter="Photoshoot" role="tab" aria-selected="false">Photoshoot <em>04</em></button>
+          <button class="filter" data-filter="Fashion" role="tab" aria-selected="false">Fashion <em>04</em></button>
           <button class="filter" data-filter="Everyday Glam" role="tab" aria-selected="false">Everyday Glam <em>02</em></button>
         </div>
         <div class="gallery" id="gallery">
